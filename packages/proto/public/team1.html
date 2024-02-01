@@ -4,46 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
 </head>
 <body>
-    <h1>Team 1</h1>
-    <section>
-        <h2>Coach</h2>
-        <p>Coach: John Doe</p>
-    </section>
-
-    <section>
-        <h2>Record</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Wins</th>
-                    <th>Losses</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>5</td>
-                    <td>2</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section>
-        <h2>Players</h2>
-        <ul>
-            <li><a href="player1.html">Player 1</a></li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Schedule of Games</h2>
-        <ul>
-            <li><a href="game1.html">Team 1 vs Team 2</a></li>
-        </ul>
-    </section>
-
+    <h1>
+        Team 1
+        <svg class="icon">
+            <use href="/icons/sports.svg#icon-sports" />
+        </svg>
+    </h1>
+    <div class="main-container">
+        <section>
+            <h2>Coach</h2>
+            <p>Coach: John Doe</p>
+        </section>
+    
+        <section>
+            <h2>Record</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Wins</th>
+                        <th>Losses</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>5</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    
+        <section>
+            <h2>Players</h2>
+            <ul>
+                <li><a href="player1.html">Player 1</a></li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Schedule of Games</h2>
+            <ul>
+                <li><a href="game1.html">Team 1 vs Team 2</a></li>
+            </ul>
+        </section>    
+    </div>
     <a href="index.html">Back to League</a>
 </body>
 </html>
