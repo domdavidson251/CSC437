@@ -1,0 +1,27 @@
+:root {
+    --font-family: 'Roboto', sans-serif;
+    --header-background-color: #007bff;
+    --header-text-color: #fff;
+    --main-background-color: #f0f0f0;
+    --text-color: #333;
+    --link-color: #007bff;
+    --link-hover-color: #0056b3;
+    --border-color: #ddd;
+    --alt-background-color: #fff;
+    --page-padding: 20px;
+    --color-brand: rgb(42 143 42);
+    --color-background-control: #ccc;
+    --time-transition-control: 300ms;
+}
+
+body.dark-mode {
+    --header-background-color: #1a73e8; 
+    --header-text-color: #fff; 
+    --main-background-color: #333333; 
+    --text-color: #eee; 
+    --link-color: #1a73e8; 
+    --link-hover-color: #0056b3; 
+    --border-color: #aaa; 
+    --alt-background-color: #444444; 
+    --color-background-control: #666; 
+}

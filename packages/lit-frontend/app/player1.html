@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+    <script type="module" src="/src/drop-down.ts"></script>
+    <script type="module" src="/src/toggle-switch.ts"></script>
+</head>
+<body>
+    <header>
+        <h1>
+            Player 1
+            <svg class="icon">
+                <use href="/icons/sports.svg#icon-sports" />
+            </svg>
+        </h1>
+        <drop-down>
+            User
+            <ul slot="menu">
+                <li><a href="user_profile.html">Profile</a></li>
+                <li><a href="#">Sign out</a></li>
+            </ul>
+        </drop-down>
+    </header>
+    <toggle-switch>Switch Modes</toggle-switch>
+    <div class="main-container">
+        <section>
+            <h2>Team</h2>
+            <p>Team: <a href="team1.html">Team 1</a></p>
+        </section>
+    
+        <section>
+            <h2>Height and Weight</h2>
+            <p>Height: 6'8"</p>
+            <p>Weight: 220 lbs</p>
+        </section>
+    
+        <section>
+            <h2>Points Per Game</h2>
+            <p>Points Per Game: 15</p>
+        </section>
+    </div>
+    <a href="index.html">Back to League</a>
+</body>
+</html>
