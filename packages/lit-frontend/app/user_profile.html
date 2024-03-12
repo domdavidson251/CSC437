@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+    <script type="module" src="/src/drop-down.ts"></script>
+    <script type="module" src="/src/toggle-switch.ts"></script>
+</head>
+<body>
+    <header>
+        <h1>User 1</h1>
+        <drop-down>
+            User
+            <ul slot="menu">
+                <li><a href="user_profile.html">Profile</a></li>
+                <li><a href="#">Sign out</a></li>
+            </ul>
+        </drop-down>
+    </header>
+    <toggle-switch>Switch Modes</toggle-switch>
+    <div class="main-container">
+        <h2>Name: Steve Jobs</h2>
+        <h2>Fan of Team 1</h2>
+    </div>
+    <a href="index.html">Back to League</a>
+</body>
+</html>
