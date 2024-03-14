@@ -171,8 +171,10 @@ render() {
       <div>
         ${this.gameData.competitions.map((competition) => html`
           <p>${competition.venue.fullName} - ${game.date}</p>
-          <p>${competition.headlines[0]?.shortLinkText}</p>
-          <p>${competition.headlines[0]?.description}</p>
+          ${competition.headlines !== undefined ? html`
+          <p>${competition.headlines[0].shortLinkText}</p>
+          <p>${competition.headlines[0].description}</p>
+        ` : ''}
           <h2>${game.status.type.detail}</h2>
           <div class="competitors">
             ${competition.competitors.map((competitor) => html`

@@ -110,7 +110,7 @@ export class MLBGamePage extends App.View {
         homeTeam: this.parseTeamStatistics(data.competitions[0].competitors.find((team: any) => team.homeAway === 'home')),
         awayTeam: this.parseTeamStatistics(data.competitions[0].competitors.find((team: any) => team.homeAway === 'away'))
       },
-      leaders: data.competitions[0].leaders.map((leader: any) => ({
+      leaders: data.competitions[0].leaders ? data.competitions[0].leaders.map((leader: any) => ({
         name: leader.name,
         leaders: leader.leaders.map((leaderDetail: any) => ({
           displayValue: leaderDetail.displayValue,
@@ -119,7 +119,7 @@ export class MLBGamePage extends App.View {
             headshot: leaderDetail.athlete.headshot
           }
         }))
-      })),
+      })) : [],
       status: data.status
     };
     return game;
@@ -135,11 +135,19 @@ export class MLBGamePage extends App.View {
   }
 
   parseTeamStatistics(teamData: any): TeamStatistics {
+    if (teamData.statistics.errors === undefined) {
+      return {
+        hits: teamData.statistics.find((stat: any) => stat.name === 'hits')?.displayValue || 0,
+        runs: 0,
+        avg: teamData.statistics.find((stat: any) => stat.name === 'avg')?.displayValue || ".000",
+        errors: teamData.statistics.find((stat: any) => stat.name === 'errors')?.displayValue || 0
+      }
+    }
     return {
-      hits: teamData.statistics.find((stat: any) => stat.name === 'hits').displayValue,
-      runs: teamData.statistics.find((stat: any) => stat.name === 'runs').displayValue,
-      avg: teamData.statistics.find((stat: any) => stat.name === 'avg').displayValue,
-      errors: teamData.statistics.find((stat: any) => stat.name === 'errors').displayValue
+      hits: teamData.statistics.find((stat: any) => stat.name === 'hits')?.displayValue || '',
+      runs: teamData.statistics.find((stat: any) => stat.name === 'runs')?.displayValue || '',
+      avg: teamData.statistics.find((stat: any) => stat.name === 'avg')?.displayValue || '',
+      errors: teamData.statistics.find((stat: any) => stat.name === 'errors')?.displayValue || ''
     };
   }
 
