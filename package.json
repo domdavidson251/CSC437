@@ -15,9 +15,14 @@
   "bugs": {
     "url": "https://github.com/domdavidson251/CSC437/issues"
   },
-  "homepage": "https://github.com/domdavidson251/CSC437#readme"
-  ,
+  "homepage": "https://github.com/domdavidson251/CSC437#readme",
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@vaadin/router": "^1.7.5",
+    "jsonwebtoken": "^9.0.2"
+  }
 }

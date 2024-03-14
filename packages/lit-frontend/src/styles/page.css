@@ -1,0 +1,40 @@
+
+body {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    position: relative;
+    background-color: #007bff;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+}
+
+drop-down {
+    position: absolute;
+    bottom: 0;
+    right: 45px;
+}
+
+a {
+    color: #007bff;
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    color: #007bff; 
+    font-family: 'Playfair Display', serif;
+}
+
+ul, p {
+    font-family: 'Roboto', sans-serif;
+}
+
+svg.icon {
+    display: inline;
+    height: 2em;
+    width: 2em;
+    vertical-align: top;
+    fill: currentColor;
+}
