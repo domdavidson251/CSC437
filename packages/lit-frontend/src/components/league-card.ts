@@ -19,6 +19,7 @@ export class LeagueCardComponent extends LitElement {
       border-radius: 8px;
       text-align: center;
       margin: 10px;
+      cursor: pointer;
     }
     img {
       max-width: 100%;

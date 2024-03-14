@@ -1,5 +1,5 @@
 import { Schema, Model, Document, model } from "mongoose";
-import { Profile } from "../../../ts-models/profile";
+import { Profile } from "../../../ts-models/src/profile";
 
 const profileSchema = new Schema<Profile>(
   {

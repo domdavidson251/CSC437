@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import credentials from "./services/credentials";
 import profiles from "./services/profiles";
-import { Profile } from "../../ts-models/profile";
+import { Profile } from "../../ts-models/src/profile";
 import { Request, Response, NextFunction } from "express";
 
 function generateAccessToken(username: string) {

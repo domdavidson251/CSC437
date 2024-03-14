@@ -60,6 +60,7 @@ export class BasketballTeams extends LitElement {
       border-radius: 8px;
       padding: 16px;
       margin-bottom: 16px;
+      cursor: pointer;
     }
     .team-logo {
       width: 100px;

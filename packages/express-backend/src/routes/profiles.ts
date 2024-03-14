@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { Profile } from "../../../ts-models/profile";
+import { Profile } from "../../../ts-models/src/profile";
 import profiles from "../services/profiles";
 
 const router = express.Router();

@@ -1,4 +1,4 @@
-import { Profile } from "../../../ts-models/profile";
+import { Profile } from "../../../ts-models/src/profile";
 import ProfileModel from "../mongo/profile";
 
 function index(): Promise<Profile[]> {

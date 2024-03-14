@@ -40,7 +40,7 @@ export class BlazingHeaderElement extends LitElement {
 
     return html`
       <header>
-      <h1 @click="${this._navigateToApp}"> League
+      <h1 @click="${this._navigateToApp}"> Sports App
         <svg class="icon">
           <use href="../../icons/sports.svg#icon-sports" />
         </svg>
@@ -55,7 +55,11 @@ export class BlazingHeaderElement extends LitElement {
     Router.go('/app');
   }
 
-  static styles = [unsafeCSS(tokensCSS), unsafeCSS(pageCSS), unsafeCSS(resetCSS)];
+  static styles = [unsafeCSS(tokensCSS), unsafeCSS(pageCSS), unsafeCSS(resetCSS),
+  css`
+  h1{
+    cursor: pointer;
+  }`];
 
 
   updated(changedProperties: Map<string, unknown>) {

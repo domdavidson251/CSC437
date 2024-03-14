@@ -93,7 +93,7 @@ export class AuthRequiredElement extends LitElement {
     `;
   }
 
-  static styles = [unsafeCSS(tokensCSS), unsafeCSS(pageCSS), unsafeCSS(resetCSS), 
+  static styles = [ 
     css`
     :host {
       display: contents;
