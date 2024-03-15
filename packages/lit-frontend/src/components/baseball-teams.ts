@@ -1,32 +1,8 @@
-import { LitElement, html, css, PropertyValues } from 'lit';
+import { LitElement, html, PropertyValues, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { Router } from "@vaadin/router";
-
-
-interface Team {
-  id: string;
-  name: string;
-  abbreviation: string;
-  displayName: string;
-  location: string;
-  color: string;
-  alternateColor: string;
-  logos: { href: string; }[];
-  links: { href: string; text: string; }[];
-}
-
-interface League {
-  id: string;
-  name: string;
-  abbreviation: string;
-  teams: { team: Team; }[];
-}
-
-interface Sport {
-  id: string;
-  name: string;
-  leagues: League[];
-}
+import teamsCSS from "/src/styles/teams.css?inline";
+import { Team, League, Sport } from "../../../ts-models/src/teams";
 
 @customElement('baseball-teams')
 export class BaseballTeams extends LitElement {
@@ -54,27 +30,7 @@ export class BaseballTeams extends LitElement {
     }
   }
 
-  static styles = css`
-    .team-card {
-      border: 1px solid #007bff;
-      border-radius: 8px;
-      padding: 16px;
-      margin-bottom: 16px;
-    }
-    .team-logo {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-right: 16px;
-    }
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      grid-gap: 20px;
-      cursor: pointer;
-    }
-  `;
+  static styles = unsafeCSS(teamsCSS);
 
   renderTeamCard(team: Team) {
     return html`

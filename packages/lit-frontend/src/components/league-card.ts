@@ -1,11 +1,6 @@
 import { LitElement, html, css} from 'lit';
 import { property, customElement } from 'lit/decorators.js';
-
-
-interface CardData {
-    name: string;
-    imageUrl: string;
-}
+import { CardData } from "../../../ts-models/src/league-card";
 
 @customElement("league-card")
 export class LeagueCardComponent extends LitElement {

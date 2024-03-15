@@ -1,48 +1,7 @@
-import { html, css, LitElement } from 'lit';
+import { html, css, LitElement, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-
-
-interface Athlete {
-    age: number;
-    displayName: string
-    jersey: string;
-    position: {
-      displayName: string;
-    };
-  }
-  
-  interface Coach {
-    id: string;
-    firstName: string;
-    lastName: string;
-    experience: number;
-  }
-  
-  interface Team {
-    abbreviation: string;
-    location: string;
-    name: string;
-    displayName: string;
-    color: string;
-  }
-
-  interface Position {
-    position: string;
-    items: Athlete[];
-  }
-  interface Season {
-    year: number;
-    type: number;
-    name: string;
-    displayName: string;
-
-  }
-  interface RosterData {
-    athletes: Position[];
-    coach: Coach[];
-    team: Team;
-    season: Season;
-  }
+import { RosterData } from "../../../ts-models/src/roster"; 
+import rosterCSS from "/src/styles/roster.css?inline";
 
 @customElement('mlb-roster')
 export class MLBRoster extends LitElement {
@@ -66,9 +25,7 @@ export class MLBRoster extends LitElement {
         }
     }
 
-    static styles = css`
-        /* Add your styles for mlb-roster here */
-    `;
+    static styles = unsafeCSS(rosterCSS);
 
     render() {
         if (!this.rosterData) {

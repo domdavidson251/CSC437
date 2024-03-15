@@ -1,35 +1,11 @@
-import { html, css, LitElement } from 'lit';
+import { html, LitElement, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
-
-interface NewsArticle {
-    headline: string;
-    description: string;
-    images: { url: string; caption: string }[];
-    links: { web: { href: string } };
-  }
+import { NewsArticle } from "../../../ts-models/src/news-article";
+import newsCSS from "/src/styles/news.css?inline";
 
 @customElement('nfl-news')
 export class NFLNews extends LitElement {
-  static styles = css`
-    .news-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      grid-gap: 20px;
-    }
-    .news-item {
-      border: 1px solid #007bff;
-      border-radius: 8px;
-      padding: 16px;
-      box-sizing: border-box; /* Ensure padding doesn't increase the width */
-      display: flex;
-      flex-direction: column;
-    }
-    .news-item img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 12px; /* Add some spacing between image and text */
-    }
-  `;
+  static styles = unsafeCSS(newsCSS);
 
   static apiUrl = 'http://site.api.espn.com/apis/site/v2/sports/football/nfl/news';
 

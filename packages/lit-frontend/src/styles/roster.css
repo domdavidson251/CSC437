@@ -1,0 +1,22 @@
+:host {
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    color: #007bff; 
+    border-bottom: 2px solid #007bff; 
+    padding-bottom: 5px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+li strong {
+    color: #007bff;
+}

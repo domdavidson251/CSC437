@@ -1,11 +1,8 @@
-import { html, css, unsafeCSS } from "lit";
+import { html, css } from "lit";
 import { customElement} from "lit/decorators.js";
 import * as App from "../app";
 import { Router } from "@vaadin/router";
 import "../components/league-card"
-import resetCSS from "/src/styles/reset.css?inline";
-import pageCSS from "/src/styles/page.css?inline";
-import tokensCSS from "/src/styles/tokens.css?inline";
 
 @customElement("league-page")
 export class LeaguePageElement extends App.View {
@@ -24,7 +21,7 @@ export class LeaguePageElement extends App.View {
         `;
     }
 
-    static styles = [unsafeCSS(resetCSS), unsafeCSS(pageCSS), unsafeCSS(tokensCSS), css`
+    static styles = [css`
     .card-container {
       display: flex;
     }`];

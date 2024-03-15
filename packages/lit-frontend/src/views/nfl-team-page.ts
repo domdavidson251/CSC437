@@ -1,35 +1,9 @@
-import { html, css, PropertyValues } from 'lit';
+import { html, PropertyValues, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import * as App from "../app";
 import "../components/nfl-roster";
-
-interface Team {
-    id: string;
-    location: string;
-    name: string;
-    abbreviation: string;
-    displayName: string;
-    color: string;
-    alternateColor: string;
-    logos: { href: string; }[];
-    record: {
-      items: {
-        description: string;
-        summary: string;
-      }[];
-    };
-    links: { href: string; text: string; }[];
-    franchise: {
-      venue: {
-        fullName: string;
-        address: {
-          city: string;
-          state: string;
-          zipCode: string;
-        };
-      };
-    };
-  }
+import { TeamPage } from "../../../ts-models/src/team-page"
+import teamPageCSS from "/src/styles/team-page.css?inline";
 
 type TeamLocation = Location & {
     params: { teamid: string };
@@ -37,7 +11,7 @@ type TeamLocation = Location & {
   
 @customElement('nfl-team-page')
 export class NFLTeamPage extends App.View {
-  @property({ type: Object }) teamData: Team | null = null;
+  @property({ type: Object }) teamData: TeamPage | null = null;
 
   @property({ attribute: false })
   location?: TeamLocation;
@@ -71,55 +45,7 @@ export class NFLTeamPage extends App.View {
     }
   }
 
-  static styles = css`
-  .team-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-  }
-
-  .team-logo {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    grid-column: span 2;
-    justify-self: center;
-  }
-
-  .record,
-  .links {
-    border: 1px solid #007bff;
-    border-radius: 8px;
-    padding: 10px;
-  }
-
-  .record {
-    grid-column: span 1;
-  }
-
-  .links {
-    grid-column: span 1;
-  }
-
-  ul {
-    padding: 0;
-    margin: 0;
-  }
-
-  li {
-    list-style: none;
-    margin-bottom: 5px;
-  }
-
-  a {
-    color: #007bff;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-`;
+  static styles = unsafeCSS(teamPageCSS);
 
 render() {
   if (!this.teamData) {

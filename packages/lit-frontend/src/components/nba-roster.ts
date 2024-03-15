@@ -1,49 +1,13 @@
-import { html, css, LitElement } from 'lit';
+import { html, LitElement, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-
-interface Athlete {
-    age: number;
-    displayName: string
-    jersey: string;
-    position: {
-      displayName: string;
-    };
-  }
-  
-  interface Coach {
-    id: string;
-    firstName: string;
-    lastName: string;
-    experience: number;
-  }
-  
-  interface Team {
-    abbreviation: string;
-    location: string;
-    name: string;
-    displayName: string;
-    color: string;
-  }
-
-  interface Season {
-    year: number;
-    type: number;
-    name: string;
-    displayName: string;
-
-  }
-  interface RosterData {
-    athletes: Athlete[];
-    coach: Coach[];
-    team: Team;
-    season: Season;
-  }
+import { NBARosterData } from "../../../ts-models/src/roster";
+import rosterCSS from "/src/styles/roster.css?inline";
 
 @customElement('nba-roster')
 export class NBARoster extends LitElement {
     @property({ type: String }) teamid: string = '';
 
-    @property({ type: Object }) rosterData: RosterData | null = null;
+    @property({ type: Object }) rosterData: NBARosterData | null = null;
 
     async connectedCallback() {
         super.connectedCallback();
@@ -61,9 +25,7 @@ export class NBARoster extends LitElement {
         }
     }
 
-    static styles = css`
-        /* Add your styles for mlb-roster here */
-    `;
+    static styles = unsafeCSS(rosterCSS);
 
     render() {
         if (!this.rosterData) {

@@ -1,0 +1,11 @@
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+  }
+  .game-item {
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+  }

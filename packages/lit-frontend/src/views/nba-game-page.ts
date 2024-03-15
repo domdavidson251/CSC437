@@ -77,7 +77,6 @@ interface NBAGameData {
     name: string;
     competitions: Game[];
     status: Status;
-    
 }
 
 type GameLocation = Location & {
@@ -139,7 +138,7 @@ export class NBAGamePage extends App.View {
   .leaders {
     margin-top: 10px;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Adjusted to span two columns */
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
     grid-gap: 10px;
   }
 
@@ -151,9 +150,9 @@ export class NBAGamePage extends App.View {
   }
 
   .leader-item img {
-    max-width: 80px; /* Increased the maximum width of leader images */
+    max-width: 80px;
     border-radius: 50%;
-    margin-bottom: 10px; /* Increased margin bottom for spacing */
+    margin-bottom: 10px;
   }
 
   h2 {

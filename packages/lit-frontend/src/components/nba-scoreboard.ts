@@ -1,33 +1,12 @@
-import { html, css, LitElement } from 'lit';
+import { html, unsafeCSS, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { Router } from "@vaadin/router";
-
-interface Game {
-  id: string;
-  date: string;
-  name: string;
-  homeTeam: string;
-  awayTeam: string;
-  homeScore: string;
-  awayScore: string;
-  status: string;
-}
+import scoreboardCSS from "/src/styles/scoreboard.css?inline";
+import { Game } from "../../../ts-models/src/scoreboard";
 
 @customElement('nba-scoreboard')
 export class NBAScoreboard extends LitElement {
-  static styles = css`
-    .game-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      grid-gap: 20px;
-    }
-    .game-item {
-      border: 1px solid #007bff;
-      border-radius: 8px;
-      padding: 16px;
-      cursor: pointer;
-    }
-  `;
+  static styles = unsafeCSS(scoreboardCSS);
 
   static apiUrl = 'http://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard';
 

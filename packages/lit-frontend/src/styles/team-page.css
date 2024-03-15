@@ -1,0 +1,47 @@
+.team-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+
+  .team-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    grid-column: span 2;
+    justify-self: center;
+  }
+
+  .record,
+  .links {
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .record {
+    grid-column: span 1;
+  }
+
+  .links {
+    grid-column: span 1;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    list-style: none;
+    margin-bottom: 5px;
+  }
+
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
