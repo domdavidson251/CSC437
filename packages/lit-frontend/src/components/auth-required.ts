@@ -6,9 +6,6 @@ import {
   AuthenticatedUser,
   FormDataRequest
 } from "../rest";
-import resetCSS from "/src/styles/reset.css?inline";
-import pageCSS from "/src/styles/page.css?inline";
-import tokensCSS from "/src/styles/tokens.css?inline";
 
 export let authContext = createContext<APIUser>("auth");
 
@@ -113,15 +110,20 @@ export class AuthRequiredElement extends LitElement {
     form > h2 {
       grid-column: start / end;
       text-align: center;
+      color: #007bff; 
     }
     input,
     button {
       font: inherit;
       line-height: inherit;
       margin: 0.25em;
+      color: #007bff; 
+      border-color: #007bff;
     }
     button {
       grid-column: 2;
+      background-color: #007bff; 
+      color: #ffffff; 
     }
   `];
 
